@@ -2,19 +2,20 @@
 
 A dockerized version of CUPS Filters with a set of API for managing printers and print jobs
 
+## Project description
+
+This project was born to address a scenario where there are:
+
+- one server running `cups` that manages printer queues
+- one server running `foomatic-rip` that manages the rendering phase
+
+If you need to setup a similar environment, you should also consider to run the `cups` container https://github.com/drcoccodrillus/docker-cups
+
 ***
 
 ## How to use it
 
-This dockerized version of CUPS Filters aims to be a good solution for those scenarios where is needed a server side rendering and a client side printing. This docker container does its work in combo with this: https://hub.docker.com/r/drcoccodrillus/cups
-
-### Scenario
-
-This is the typical scenario where using this image could help you out.
-
-There is an application server which needs to process the rendering phase server side.
-Application server ---> Cups Server
-
+This dockerized version of CUPS Filters aims to be a good solution for those scenarios where is needed a server side rendering and a client side printing. This docker container does its work in combo with this: https://github.com/drcoccodrillus/docker-cups
 
 ### Clone the repository
 
@@ -26,7 +27,7 @@ Application server ---> Cups Server
 
 #### Default settings
 
-Before starting the cups-filters container, remember to start this dockerized version of CUPS https://hub.docker.com/r/drcoccodrillus/cups or to have a CUPS Server running and configured for accepting print jobs from the network. As default settings, this containerized cups-filters process the encoded PDF payload received through the API using `Generic-PDF_Printer-PDF.ppd` then sends print jobs to a CUPS Server with IP `172.28.0.2` and listening on default `631`. You can modify this default settings changing the config.py constants `CUPS_HOST` and `PPD`.
+Before starting the cups-filters container, remember to start this dockerized version of CUPS https://github.com/drcoccodrillus/docker-cups or to have a CUPS Server running and configured for accepting print jobs from the network. As default settings, this containerized cups-filters process the encoded PDF payload received through the API using `Generic-PDF_Printer-PDF.ppd` then sends print jobs to a CUPS Server with IP `172.28.0.2` and listening on default `631`. You can modify this default settings changing the config.py constants `CUPS_HOST` and `PPD`.
 
 ### API
 
