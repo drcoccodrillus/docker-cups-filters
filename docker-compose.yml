@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  cups:
+    build: .
+    image: drcoccodrillus/cups-filters:latest
+    container_name: cups-filters
+    restart: always
+    privileged: true
+    networks:
+      - printer-network
+
+networks:
+  printer-network:
+    name: printer-network
+    driver: bridge
