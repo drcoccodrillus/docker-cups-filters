@@ -26,7 +26,7 @@ Application server ---> Cups Server
 
 #### Default settings
 
-Before starting the cups-filters container, remember to start this dockerized version of CUPS https://hub.docker.com/r/drcoccodrillus/cups or to have a CUPS Server running and configured for accepting print jobs from the network. As default settings, this containerized cups-filters process the encoded PDF payload received through the API using Generic-PDF_Printer-PDF.ppd then sends print jobs to a CUPS Server with IP 172.28.0.2 and listening on default 631. You can modify this default settings changing the config.py constants CUPS_HOST and PPD.
+Before starting the cups-filters container, remember to start this dockerized version of CUPS https://hub.docker.com/r/drcoccodrillus/cups or to have a CUPS Server running and configured for accepting print jobs from the network. As default settings, this containerized cups-filters process the encoded PDF payload received through the API using `Generic-PDF_Printer-PDF.ppd` then sends print jobs to a CUPS Server with IP `172.28.0.2` and listening on default `631`. You can modify this default settings changing the config.py constants `CUPS_HOST` and `PPD`.
 
 ### API
 
