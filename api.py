@@ -40,7 +40,6 @@ def get_printer_status():
             details[i]['status'] = value[2]
             details[i]['date'] = value[5] + " " + value[6] + " " + value[7].rstrip(',')
             details[i]['time'] = value[8]
-            i += 1
             print(re.match('printer.*', line).group())
         elif(re.match('printer.*is', line)):
             value = line.split(' ')
@@ -49,8 +48,8 @@ def get_printer_status():
             details[i]['status'] = value[5]
             details[i]['date'] = value[8] + " " + value[9] + " " + value[10].rstrip(',')
             details[i]['time'] = value[11]
-            i += 1
             print(re.match('printer.*', line).group())
+        i += 1
     return json.dumps(details)
 
 @api.route('/v1/printer-details', methods=['GET'])
